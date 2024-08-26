@@ -1,0 +1,13 @@
+#!/bin/bash
+#ddev-generated
+
+## Description: Run unlighthouse and prepare reports
+## Usage: unlighthouse
+## Example: "ddev unlighthouse"
+## ExecRaw: true
+# export NODE_TLS_REJECT_UNAUTHORIZED='0'
+
+FOLDER=${1:-'local'}
+FILE=${2:-'unlighthouse.ts'}
+
+unlighthouse --config-file=./config/$FOLDER/$FILE --upload.outputDir=./export/$FOLDER

@@ -1,0 +1,28 @@
+#ddev-generated
+services:
+  unlighthouse:
+    container_name: ddev-${DDEV_SITENAME}-unlighthouse
+    build:
+      context: './unlighthouseBuild'
+      args:
+        username: $USER
+        uid: $DDEV_UID
+        gid: $DDEV_GID
+    user:  '$DDEV_UID:$DDEV_GID'
+    networks: [default, ddev_default]
+    restart: "no"
+    shm_size: ${UNLIGHTHOUSE_SHM_SIZE:-1gb}
+    cap_add:
+      - SYS_ADMIN
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    entrypoint: [ "/entrypoint.sh" ]
+    environment:
+      DDEV_HOSTNAME: $DDEV_HOSTNAME
+      NODE_EXTRA_CA_CERTS: /mnt/ddev-global-cache/mkcert/rootCA.pem
+    volumes:
+    - ../reports/unlighthouse:/home/$USER/reports/export
+    - ../tests/unlighthouse:/home/$USER/reports/config
+    - .:/mnt/ddev_config:ro
+    - ddev-global-cache:/mnt/ddev-global-cache
