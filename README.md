@@ -1,12 +1,12 @@
-[![tests](https://github.com/Metadrop/ddev-unlighthouse/actions/workflows/tests.yml/badge.svg)](https://github.com/Metadrop/ddev-lighthouse/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
+[![tests](https://github.com/Metadrop/ddev-unlighthouse/actions/workflows/tests.yml/badge.svg)](https://github.com/Metadrop/ddev-unlighthouse/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
 
-* [What is DDEV Unlighthouse Add-on?](#what-is-ddev-lighthouse-add-on)
+* [What is DDEV Unlighthouse Add-on?](#what-is-ddev-unlighthouse-add-on)
 * [Getting started](#getting-started)
 * [Configuration](#configuration)
 * [Running Tests](#running-tests)
 * [Interpreting Results](#interpreting-results)
 
-## What is DDEV Lighthouse Add-on?
+## What is DDEV Unlighthouse Add-on?
 
 This is a [DDEV](https://ddev.readthedocs.io) addon to run Unlighthouse in your site. [Unlighthouse](https://unlighthouse.dev/) is a tool to scan your entire site with Google Lighthouse in 2 minutes (on average).
 
