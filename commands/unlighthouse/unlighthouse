@@ -10,4 +10,4 @@
 FOLDER=${1:-'local'}
 FILE=${2:-'unlighthouse.ts'}
 
-unlighthouse --config-file=./config/$FOLDER/$FILE --output-path=./export/$FOLDER ${@:3}
+unlighthouse --config-file=./config/$FOLDER/$FILE --output-path=./export/$FILE ${@:3}
