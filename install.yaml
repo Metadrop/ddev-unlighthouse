@@ -9,7 +9,7 @@ project_files:
 
 post_install_actions:
  - test -d ${DDEV_APPROOT}/reports/unlighthouse || mkdir -p ${DDEV_APPROOT}/reports/unlighthouse
- - test -f "${DDEV_APPROOT}/reports/unlighthouse/.gitfile" || touch ${DDEV_APPROOT}/reports/unlighthouse/.gitfile
+ - test -f "${DDEV_APPROOT}/reports/unlighthouse/.gitkeep" || touch ${DDEV_APPROOT}/reports/unlighthouse/.gitkeep
 
  - test -d ${DDEV_APPROOT}/tests/unlighthouse/local || mkdir -p ${DDEV_APPROOT}/tests/unlighthouse/local
  - test -f "${DDEV_APPROOT}/tests/unlighthouse/local/unlighthouse.ts" || cp unlighthouse/unlighthouse.ts ${DDEV_APPROOT}/tests/unlighthouse/local/unlighthouse.ts
