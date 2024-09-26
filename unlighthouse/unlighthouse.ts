@@ -1,5 +1,5 @@
 export default {
-  site: 'http://web',
+  site: 'https://web',
   scanner: {
     robotsTxt: false,
     samples: 3,
