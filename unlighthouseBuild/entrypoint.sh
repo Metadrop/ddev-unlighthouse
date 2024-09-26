@@ -14,4 +14,7 @@ if [ -n "$routerIp" ]; then
   IFS=$OIFS
 fi
 
+#Adding certs
+CAROOT=/mnt/ddev-global-cache/mkcert/ mkcert -install
+
 sleep infinity

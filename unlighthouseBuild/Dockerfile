@@ -47,6 +47,9 @@ RUN apt update --fix-missing; apt install -y sudo; mkdir /etc/sudoers.d; echo "A
 
 RUN mkdir --parents /home/$username/reports && chown --recursive $username:$username /home/$username
 
+# Install mkcert
+RUN apt update --fix-missing; apt install -y curl libnss3-tools; curl -JLO "https://dl.filippo.io/mkcert/latest?for=linux/amd64"; chmod +x mkcert-v*-linux-amd64; cp mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+
 # Setup ddev user name and folder.
 USER $username
 WORKDIR /home/$username/reports
