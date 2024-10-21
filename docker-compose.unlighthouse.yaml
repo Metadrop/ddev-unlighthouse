@@ -5,9 +5,11 @@ services:
     build:
       context: './unlighthouseBuild'
       args:
+        BASE_IMAGE: metadrop/unlighthouse:latest
         username: $USER
         uid: $DDEV_UID
         gid: $DDEV_GID
+    image: metadrop/unlighthouse:latest-${DDEV_SITENAME}-built
     user:  '$DDEV_UID:$DDEV_GID'
     restart: "no"
     shm_size: ${UNLIGHTHOUSE_SHM_SIZE:-1gb}
