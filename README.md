@@ -16,13 +16,25 @@ This is optimized for [Aljibe projects](https://github.com/Metadrop/Aljibe/), bu
 
 ## Getting Started
 
-Install this addon by running the following command:
+Install this addon:
 
-`ddev get Metadrop/ddev-unlighthouse`
+For DDEV v1.23.5 or above run
+
+```sh
+ddev add-on get Metadrop/ddev-unlighthouse
+```
+
+For earlier versions of DDEV run
+
+```sh
+ddev get Metadrop/ddev-unlighthouse
+```
 
 Once installed, make sure to restart your ddev project:
 
-`ddev restart`
+```sh
+ddev restart
+```
 
 ### Configuration
 
