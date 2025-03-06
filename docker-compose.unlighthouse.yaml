@@ -5,7 +5,7 @@ services:
     build:
       context: './unlighthouseBuild'
       args:
-        BASE_IMAGE: metadrop/unlighthouse:latest
+        BASE_IMAGE: ghcr.io/metadrop/docker-unlighthouse:latest
         username: $USER
         uid: $DDEV_UID
         gid: $DDEV_GID
