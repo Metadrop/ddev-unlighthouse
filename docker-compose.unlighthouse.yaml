@@ -9,7 +9,7 @@ services:
         username: $USER
         uid: $DDEV_UID
         gid: $DDEV_GID
-    image: metadrop/unlighthouse:${UNLIGHTHOUSE_VERSION:-0.16.2}-${DDEV_SITENAME}-built
+    image: ghcr.io/metadrop/aljibe-tools/unlighthouse:${UNLIGHTHOUSE_VERSION:-0.16.2}-${DDEV_SITENAME}-built
     user:  '$DDEV_UID:$DDEV_GID'
     restart: "no"
     shm_size: ${UNLIGHTHOUSE_SHM_SIZE:-1gb}
