@@ -1,22 +1,9 @@
 #ddev-generated
-# Based on https://github.com/indykoning/unlighthouse-docker/tree/master
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 
-# Install sudo.
-USER root
-RUN set -eux; \
-	apt-get update; \
-	apt-get install -y --no-install-recommends \
-    sudo \
-  ; \
-	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-	rm -rf /var/lib/apt/lists/*
-
-# Configure sudo in a manner similar to other ddev containers.
-RUN mkdir /etc/sudoers.d; echo "ALL ALL=NOPASSWD: ALL" > /etc/sudoers.d/ddev-lighthouse && chmod 440 /etc/sudoers.d/ddev-lighthouse
-
 # Add current ddev user.
+USER root
 ARG username
 ARG uid
 ARG gid
