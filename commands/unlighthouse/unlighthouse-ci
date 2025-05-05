@@ -1,7 +1,7 @@
 #!/bin/bash
 #ddev-generated
 
-## Description: Run unlighthouse-ci and prepare reports
+## Description: Run unlighthouse-ci and build static reports
 ## Usage: unlighthouse-ci
 ## Example: "ddev unlighthouse-ci"
 ## ExecRaw: true
@@ -10,19 +10,4 @@
 FOLDER=${1:-'local'}
 FILE=${2:-'unlighthouse.ts'}
 
-REPORTS_FOLDER="./export"
-
-replace_content_in_files() {
-  local folder=$1
-  local filter=$2
-  local search=$3
-  local replace=$4
-
-  find "${folder}" -name "${filter}" -type f -exec sed -i "s|${search}|${replace}|g" {} +
-}
-
 unlighthouse-ci --build-static --config-file=./config/$FOLDER/$FILE --output-path=./export/$FILE ${@:3}
-
-replace_content_in_files "$REPORTS_FOLDER" "*.js" "/reports" "./reports"
-replace_content_in_files "$REPORTS_FOLDER" "*.js" "/assets" "./assets"
-replace_content_in_files "$REPORTS_FOLDER" "*.html" "/assets" "./assets"

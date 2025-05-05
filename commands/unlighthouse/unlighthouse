@@ -1,7 +1,7 @@
 #!/bin/bash
 #ddev-generated
 
-## Description: Run unlighthouse and prepare reports
+## Description: Run unlighthouse
 ## Usage: unlighthouse
 ## Example: "ddev unlighthouse"
 ## ExecRaw: true
