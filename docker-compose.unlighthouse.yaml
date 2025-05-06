@@ -18,9 +18,12 @@ services:
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
+    expose:
+      - 5678
     environment:
-      DDEV_HOSTNAME: $DDEV_HOSTNAME
-      NODE_EXTRA_CA_CERTS: /mnt/ddev-global-cache/mkcert/rootCA.pem
+      - DDEV_HOSTNAME=$DDEV_HOSTNAME
+      - NODE_EXTRA_CA_CERTS=/mnt/ddev-global-cache/mkcert/rootCA.pem
+      - HTTP_EXPOSE=5678:5678
     entrypoint: [ "/entrypoint.sh" ]
     volumes:
       - ../reports/unlighthouse:/home/$USER/reports/export
