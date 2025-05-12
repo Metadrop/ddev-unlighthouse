@@ -12,5 +12,9 @@ export default {
       'seo': 90
     },
     buildStatic: true
-  }
+  },
+  serverUrl: "http://example.ddev.site:5678/",
+  clientUrl: "http://example.ddev.site:5678/",
+  apiUrl: "http://example.ddev.site:5678/api",
+  websocketUrl: "ws://example.ddev.site:5678/api/ws"
 }

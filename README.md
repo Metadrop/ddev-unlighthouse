@@ -42,11 +42,17 @@ This addon uses the `tests/[local|pro|....]/unlighthouse.ts` configuration file 
 
 ### Running Tests
 
-To execute unlighthouse tests, simply access your ddev environment and run the following command:
+To execute unlighthouse tests, simply access your ddev environment and run any of this commands:
 
-`ddev unlighthouse <folder>[local|pre|pro...]`
+* `unlighthouse`: Run tests and browse them live at `https://$DDEV_HOSTNAME:5678`
+* `unlighthouse-ci`: Run tests and generate a static report in `reports/unlighthouse` folder
 
-Lighthouse will generate detailed reports and save them in the `reports/unlighthouse` folder of your project.
+`ddev [unlighthouse|unlighthouse-ci] <folder>[local|pre|pro...]`
+
+
+### Accessing reports
+
+Because of CORS restrictions, reports must be accessed via an HTTP server. To do this, you need to adjust the unlighthouse configuration and provide ddev's URL. See [`unlighthouse/unlighthouse.ts`](./unlighthouse/unlighthouse.ts) for reference.
 
 ### Interpreting Results
 
