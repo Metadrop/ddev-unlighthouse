@@ -10,4 +10,9 @@
 FOLDER=${1:-'local'}
 FILE=${2:-'unlighthouse.ts'}
 
-unlighthouse --config-file=./config/$FOLDER/$FILE --output-path=./export/$FILE ${@:3}
+# Get the first hostname from DDEV_HOSTNAME
+FIRST_HOSTNAME=$(echo "$DDEV_HOSTNAME" | cut -d',' -f1)
+
+# Using sed to replace localhost with the actual hostname in the output as a
+# workaround to unlighthouse not respecting the config file's settings.
+FORCE_COLOR=1 unlighthouse --config-file=./config/$FOLDER/$FILE --output-path=./export/$FILE ${@:3} | sed "s|http://localhost:5678|https://$FIRST_HOSTNAME:5678|g"
