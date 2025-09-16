@@ -23,7 +23,9 @@ services:
     environment:
       - DDEV_HOSTNAME=$DDEV_HOSTNAME
       - NODE_EXTRA_CA_CERTS=/mnt/ddev-global-cache/mkcert/rootCA.pem
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=5678:5678
+      - HTTPS_EXPOSE=5678:5678
     entrypoint: [ "/entrypoint.sh" ]
     volumes:
       - ../reports/unlighthouse:/home/$USER/reports/export

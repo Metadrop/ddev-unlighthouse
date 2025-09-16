@@ -1,3 +1,6 @@
+/*
+#ddev-generated
+ */
 export default {
   site: 'https://web',
   scanner: {
@@ -19,8 +22,8 @@ export default {
     },
     buildStatic: true
   },
-  serverUrl: "http://example.ddev.site:5678/",
-  clientUrl: "http://example.ddev.site:5678/",
-  apiUrl: "http://example.ddev.site:5678/api",
-  websocketUrl: "ws://example.ddev.site:5678/api/ws"
+  serverUrl: "/",
+  clientUrl: "/",
+  apiUrl: "/api",
+  websocketUrl: "/api/ws"
 }
