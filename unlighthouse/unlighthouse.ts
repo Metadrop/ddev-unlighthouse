@@ -4,6 +4,12 @@ export default {
     robotsTxt: false,
     samples: 3,
   },
+  chrome: {
+    ignoreHTTPSErrors: true,
+  },
+  puppeteerOptions: {
+    args: ['--ignore-certificate-errors', '--no-sandbox'],
+  },
   ci: {
     budget: {
       'performance': 90,
