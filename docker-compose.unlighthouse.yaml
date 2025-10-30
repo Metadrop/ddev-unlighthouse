@@ -5,11 +5,11 @@ services:
     build:
       context: './unlighthouseBuild'
       args:
-        BASE_IMAGE: ghcr.io/metadrop/aljibe-tools/unlighthouse:${UNLIGHTHOUSE_VERSION:-0.16.2}
+        BASE_IMAGE: ghcr.io/metadrop/aljibe-tools/unlighthouse:${UNLIGHTHOUSE_VERSION:-latest}
         username: $USER
         uid: $DDEV_UID
         gid: $DDEV_GID
-    image: ghcr.io/metadrop/aljibe-tools/unlighthouse:${UNLIGHTHOUSE_VERSION:-0.16.2}-${DDEV_SITENAME}-built
+    image: ghcr.io/metadrop/aljibe-tools/unlighthouse:${UNLIGHTHOUSE_VERSION:-latest}-${DDEV_SITENAME}-built
     user:  '$DDEV_UID:$DDEV_GID'
     restart: "no"
     shm_size: ${UNLIGHTHOUSE_SHM_SIZE:-1gb}
@@ -21,7 +21,7 @@ services:
     expose:
       - 5678
     environment:
-      - DDEV_HOSTNAME=$DDEV_HOSTNAME
+      - DDEV_HOSTNAME=$DDEV_HOSTNAM
       - NODE_EXTRA_CA_CERTS=/mnt/ddev-global-cache/mkcert/rootCA.pem
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=5678:5678
