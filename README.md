@@ -60,4 +60,22 @@ Once unlighthouse reports are generated, you can review them to identify areas f
 
 Happy optimization!
 
+## Image version
+
+This addon uses a Docker image from [docker-aljibe-tools](https://github.com/Metadrop/docker-aljibe-tools) with a combined tag that encodes both the Unlighthouse version and the base image version:
+
+```
+ghcr.io/metadrop/aljibe-tools/unlighthouse:0.17.2-base1.0.0
+```
+
+The default version is set in `docker-compose.unlighthouse.yaml`. To use a different version, add the following to `.ddev/.env`:
+
+```
+UNLIGHTHOUSE_VERSION=0.17.2-base1.0.0
+```
+
+To update to a newer version, reinstall the addon with `ddev add-on get Metadrop/ddev-unlighthouse` or update `UNLIGHTHOUSE_VERSION` in `.ddev/.env` and run `ddev restart`.
+
+Available versions are listed in the [docker-aljibe-tools packages](https://github.com/orgs/metadrop/packages/container/package/aljibe-tools%2Funlighthouse).
+
 **Contributed and maintained by [@Metadrop](https://github.com/Metadrop)**
