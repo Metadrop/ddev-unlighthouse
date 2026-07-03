@@ -4,7 +4,7 @@ project_files:
 - docker-compose.unlighthouse.yaml
 - unlighthouseBuild
 - unlighthouse
-- commands
+- commands/unlighthouse
 
 post_install_actions:
  - test -d ${DDEV_APPROOT}/reports/unlighthouse || mkdir -p ${DDEV_APPROOT}/reports/unlighthouse
